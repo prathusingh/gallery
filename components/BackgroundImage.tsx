@@ -2,8 +2,8 @@ import * as React from "react";
 import { View, Image, StyleSheet } from "react-native";
 
 interface BackgroundImageProps {
-  top: string,
-  bottom: string
+  top: string;
+  bottom: string;
 }
 
 export default class BackgroundImage extends React.PureComponent<BackgroundImageProps> {
