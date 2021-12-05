@@ -1,3 +1,3 @@
-# WINK SASSY
+## WINK SASSY
 
-## Personlaized blog for instagrammers
+### Personalized blog for instagrammers
