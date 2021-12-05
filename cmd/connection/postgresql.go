@@ -1,52 +1,27 @@
-package connections
+package main
 
 import (
 	"context"
 	"fmt"
-	"log"
-	"net/url"
+	"os"
+
+	"github.com/jackc/pgx/v4/pgxpool"
 )
 
-// NewPostgreSQL instantiates the PostgreSQL database using configuration defined in environment variables.
-func NewPostgreSQL(conf *envvar.Configuration) (*pgxpool.Pool, error) {
-	get := func(v string) string {
-		res, err := conf.Get(v)
-		if err != nil {
-			log.Fatalf("Couldn't get configuration value for %s: %s", v, err)
-		}
-
-		return res
-	}
-
-	// XXX: We will revisit this code in future episodes replacing it with another solution
-	databaseHost := get("DATABASE_HOST")
-	databasePort := get("DATABASE_PORT")
-	databaseUsername := get("DATABASE_USERNAME")
-	databasePassword := get("DATABASE_PASSWORD")
-	databaseName := get("DATABASE_NAME")
-	databaseSSLMode := get("DATABASE_SSLMODE")
-	// XXX: -
-
-	dsn := url.URL{
-		Scheme: "postgres",
-		User:   url.UserPassword(databaseUsername, databasePassword),
-		Host:   fmt.Sprintf("%s:%s", databaseHost, databasePort),
-		Path:   databaseName,
-	}
-
-	q := dsn.Query()
-	q.Add("sslmode", databaseSSLMode)
-
-	dsn.RawQuery = q.Encode()
-
-	pool, err := pgxpool.Connect(context.Background(), dsn.String())
+func main() {
+	dbpool, err := pgxpool.Connect(context.Background(), os.Getenv("DATABASE_URL"))
 	if err != nil {
-		return nil, internal.WrapErrorf(err, internal.ErrorCodeUnknown, "pgxpool.Connect")
+		fmt.Fprintf(os.Stderr, "Unable to connect to database: %v\n", err)
+		os.Exit(1)
+	}
+	defer dbpool.Close()
+
+	var greeting string
+	err = dbpool.QueryRow(context.Background(), "select 'Hello, world!'").Scan(&greeting)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "QueryRow failed: %v\n", err)
+		os.Exit(1)
 	}
 
-	if err := pool.Ping(context.Background()); err != nil {
-		return nil, internal.WrapErrorf(err, internal.ErrorCodeUnknown, "db.Ping")
-	}
-
-	return pool, nil
+	fmt.Println(greeting)
 }
