@@ -11,6 +11,9 @@ import (
 )
 
 func NewPostgreSQL() {
+
+	get := func(v string) string {
+	}
 	dsn := url.URL {
 		Scheme: "postgres",
 		User: url.UserPassword("", "")
