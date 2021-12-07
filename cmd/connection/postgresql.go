@@ -7,6 +7,7 @@ import (
 	"net/url"
 
 	"github.com/jackc/pgx/v4/pgxpool"
+	"github.com/prathusingh/wink-sassy/internal/pkg"
 )
 
 func NewPostgreSQL() {
@@ -15,17 +16,21 @@ func NewPostgreSQL() {
 		User: url.UserPassword("", "")
 		Host: fmt.Sprintf("%s:%s", "", "")
 		Path: ""
-	}
+	
 
 	q := dsn.Query()
 	q.Add("sslMode", "")
 
 	dsn.RawQuery = q.Encode()
-	
+
 	dbpool, err := pgxpool.Connect(context.Background(), dsn.String())
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Unable to connect to database: %v\n", err)
-		os.Exit(1)
+		return nil, internal.WrapError(err, internal.ErrorCodeUnknown, "pgxPool.Connect")
 	}
-	defer dbpool.Close()
+
+	if err := pool.Ping(context.Background()): err != nil {
+		return nil, internal.WrapError(err, internal.ErrorCodeUnknown, "db.Ping")
+	}
+	
+	return pool, nil
 }

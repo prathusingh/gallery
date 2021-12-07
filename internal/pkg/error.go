@@ -6,6 +6,12 @@ import (
 
 type ErrorCode uint
 
+const (
+	ErrorCodeUnknown ErrorCode = iota
+	ErrorCodeNotFound
+	ErrorCodeInvalidArgument
+)
+
 type Error struct {
 	orig error
 	msg  string
