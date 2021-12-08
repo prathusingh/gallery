@@ -31,7 +31,7 @@ func NewPostgreSQL() {
 		return nil, internal.WrapError(err, internal.ErrorCodeUnknown, "pgxPool.Connect")
 	}
 
-	if err := pool.Ping(context.Background()): err != nil {
+	if err := pool.Ping(context.Background()); err != nil {
 		return nil, internal.WrapError(err, internal.ErrorCodeUnknown, "db.Ping")
 	}
 	
