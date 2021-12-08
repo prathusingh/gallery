@@ -45,5 +45,3 @@ func (c *Configuration) Get(key string) (string, error) {
 
 	return res, nil
 }
-
-
