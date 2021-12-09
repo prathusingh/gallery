@@ -36,7 +36,7 @@ func (c *Configuration) Get(key string) (string, error) {
 	if valSecret != "" {
 		valSecretRes, err := c.provider.Get(valSecret)
 		if err != nil {
-			return "", internal.WrapError(err, internal.ErrorCodeInvalidArgument, "provider.Get")
+			return "", WrapError(err, ErrorCodeInvalidArgument, "provider.Get")
 		}
 
 		res = valSecretRes
