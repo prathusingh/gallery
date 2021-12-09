@@ -9,23 +9,22 @@ import (
 
 type Provider interface {
 	Get(key string) (string, error)
-
+}
 
 type Configuration struct {
 	provider Provider
 }
 
-
 func Load(filename string) error {
 	if err := godotenv.Load(filename); err != nil {
-		return internal.NewError(internal.ErrorCodeUnknown, "loading env var file")
+		return NewError(ErrorCodeUnknown, "loading env var file")
 	}
 
 	return nil
 }
 
 func New(provider Provider) *Configuration {
-	return &Configuration {
+	return &Configuration{
 		provider: provider,
 	}
 }
