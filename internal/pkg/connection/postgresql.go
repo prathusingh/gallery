@@ -5,20 +5,34 @@ import (
 	"fmt"
 	"os"
 	"net/url"
+	"log"
 
 	"github.com/jackc/pgx/v4/pgxpool"
-	"github.com/prathusingh/wink-sassy/internal/pkg"
 )
 
-func NewPostgreSQL() {
-
+func NewPostgreSQL(conf *Configuration)(*pgxpool.Pool, error) {
 	get := func(v string) string {
+		res, err := conf.Get(v)
+		if err != nil {
+			log.Fatalf("Couldn't get configuration value for %s: %s", v, err)
+		}
+
+		return res
 	}
+
+	// FIXME: with an elegant solution
+	databaseHost := get("DATABASE_HOST")
+	databasePort := get("DATABASE_PORT")
+	databaseUsername := get("DATABASE_USERNAME")
+	databasePassword := get("DATABASE_PASSWORD")
+	databaseName := get("DATABASE_NAME")
+	databaseSSLMode := get("DATABASE_SSLMODE")
+
 	dsn := url.URL {
 		Scheme: "postgres",
-		User: url.UserPassword("", "")
-		Host: fmt.Sprintf("%s:%s", "", "")
-		Path: ""
+		User: url.UserPassword(databaseUsername, databasePassword)
+		Host: fmt.Sprintf("%s:%s", databaseHost, databaseHost)
+		Path: databaseName
 	
 
 	q := dsn.Query()
