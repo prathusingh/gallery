@@ -36,7 +36,7 @@ func NewPostgreSQL(conf *Configuration)(*pgxpool.Pool, error) {
 	
 
 	q := dsn.Query()
-	q.Add("sslMode", "")
+	q.Add("sslMode", databaseSSLMode)
 
 	dsn.RawQuery = q.Encode()
 
