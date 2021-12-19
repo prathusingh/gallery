@@ -19,3 +19,6 @@ Communication:
 1. Microservices interact with each other using gRPC.
 2. Web and mobile client interact with microservices using GraphQL API gateway.
 
+Docker is userd for containerization of serivices.
+
+TypeScript is used in Frond End
