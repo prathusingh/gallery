@@ -21,4 +21,4 @@ Communication:
 
 Docker is userd for containerization of serivices.
 
-TypeScript is used in Frond End
+TypeScript is used in Frond End.
