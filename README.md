@@ -1,6 +1,6 @@
 ## WINK SASSY
 
-### Personalized blog for instagrammers
+### Personalized blog for content creators
 
 Home page consists of
 1. Filter
@@ -14,6 +14,7 @@ Microservices:
 1. Image Loader that loads the image in the rotational panel.
 2. Description Loader that loads the image in the rotational panel.
 3. Query Loader that loads the default homepage or apply the filtered results to the top of page.
+4. Profile Loader loads the profile of the content creator.
 
 Tech specs:
 1. Microservices interact with each other using gRPC.
