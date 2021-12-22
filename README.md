@@ -5,7 +5,7 @@
 Home page consists of
 
 1. Filter/Search
-2. Tiles showing relevant image
+2. Tiles showing relevant content
 3. Profile icon button
 
 Description Page consists of
