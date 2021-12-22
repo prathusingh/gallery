@@ -3,8 +3,9 @@
 ### Personalized blog for content creators
 
 Home page consists of
-1. Filter
+1. Filter/Search
 2. Tiles showing relevant image
+3. Profile icon button
 
 Description Page consists of
 1. Rotational panel rotating the image.
@@ -12,8 +13,8 @@ Description Page consists of
 
 Microservices:
 1. Image Loader that loads the image in the rotational panel.
-2. Description Loader that loads the image in the rotational panel.
-3. Query Loader that loads the default homepage or apply the filtered results to the top of page.
+2. Description Loader that loads the description of the image in the rotational panel.
+3. Query Loader that loads the default homepage or apply the searched results to the top of page.
 4. Profile Loader loads the profile of the content creator.
 
 Tech specs:
