@@ -19,6 +19,7 @@ Microservices:
 2. "description" that loads the description of the image in the rotational panel.
 3. "content" that loads the default homepage or apply the searched results to the top of page.
 4. "profile" loads the profile of the content creator.
+5. "content" talks with "image" and "description".
 
 Tech specs:
 
