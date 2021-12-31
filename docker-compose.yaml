@@ -1,0 +1,46 @@
+services:
+  content:
+    build:
+      context: .
+      dockerfile: ./build/content.dockerfile
+    depends_on:
+      - content_db
+    environment:
+      #DATABASE_URL: FILL_ME
+    restart: on-failure
+
+
+  image:
+    build:
+      content: .
+      dockerfile: ./build/image.dockerfile
+    depends_on:
+      - image_db
+    environment:
+      #DATABASE_URL: FILL_ME
+    restart: on-failure
+
+  description:
+    build:
+      content: .
+      dockerfile: ./build/description.dockerfile
+    depends_on:
+      - description_db
+    environment:
+      #DATABASE_URL: FILL_ME
+    restart: on-failure
+
+  profile:
+    build:
+      content: .
+      dockerfile: ./build/profile.dockerfile
+    depends_on:
+      - profile_db
+    environment:
+      #DATABASE_URL: FILL_ME
+    restart: on-failure  
+
+
+
+
+
