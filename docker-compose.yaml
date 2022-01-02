@@ -40,6 +40,10 @@ services:
       #DATABASE_URL: FILL_ME
     restart: on-failure  
 
+  image_db:
+    build:
+      context: 
+
 
 
 
