@@ -9,17 +9,6 @@ services:
       #DATABASE_URL: FILL_ME
     restart: on-failure
 
-
-  image:
-    build:
-      content: .
-      dockerfile: ./build/image.dockerfile
-    depends_on:
-      - image_db
-    environment:
-      #DATABASE_URL: FILL_ME
-    restart: on-failure
-
   description:
     build:
       content: .
