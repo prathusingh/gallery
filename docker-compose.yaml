@@ -12,9 +12,9 @@ services:
   description:
     build:
       content: .
-      dockerfile: ./build/description.dockerfile
+      dockerfile: ./build/feed.dockerfile
     depends_on:
-      - description_db
+      - feed_db
     environment:
       #DATABASE_URL: FILL_ME
     restart: on-failure
@@ -29,7 +29,7 @@ services:
       #DATABASE_URL: FILL_ME
     restart: on-failure  
 
-  image_db:
+  content_db:
     build:
       context: 
 

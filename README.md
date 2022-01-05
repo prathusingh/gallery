@@ -32,9 +32,8 @@ Microservices:
 2. Authentication service provides grpc endpoint for the User authentication. Authentication is done through Gmail, Instagram or Pinterest. No separate login.
 3. Profile service provides the grpc endpoint for the User profile.
 A profile consists of the user name, user image otherwise avatar, meta information of the content
-4. Dispatch service provides the grpc endpoint for sending the content across different platforms either email or whatsapp or copy link
-5. Feed service provides grpc endpoint for display the meta feed of the content.
-
+4. Share service provides the grpc endpoint for sending the content across different platforms either email or whatsapp or copy link
+5. Feed service provides grpc endpoint to display the content feed
 Tech specs:
 
 1. Microservices interact with each other using gRPC.
