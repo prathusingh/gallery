@@ -1,2 +1,10 @@
 .vscode
 bin/*
+
+# misc
+.DS_Store
+
+# web dependencies
+/client/web/node_modules
+/client/web/yarn-error.log*
+
