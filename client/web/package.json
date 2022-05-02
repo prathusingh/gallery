@@ -42,9 +42,13 @@
     "web-vitals": "^1.1.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "add": "^2.0.6",
     "husky": "^7.0.4",
     "lint-staged": "^12.4.1",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "yarn": "^1.22.18"
   },
   "resolutions": {
     "@types/react": "^17"
