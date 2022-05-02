@@ -52,12 +52,10 @@
   "lint-staged": {
     "*.@(ts|tsx)": [
       "yarn prettier",
-      "yarn lint",
-      "git add"
+      "yarn lint"
     ],
     "*.@(json|md|js)": [
-      "yarn prettier",
-      "git add"
+      "yarn prettier"
     ]
   },
   "husky": {
