@@ -52,11 +52,18 @@
   "lint-staged": {
     "*.@(ts|tsx)": [
       "yarn prettier",
-      "yarn lint"
+      "yarn lint",
+      "git add"
     ],
     "*.@(json|md|js)": [
-      "yarn prettier"
+      "yarn prettier",
+      "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "prettier": {
     "printWidth": 100,
