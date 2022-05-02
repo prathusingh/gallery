@@ -1,7 +1,31 @@
 {
   "name": "wink-sassy",
-  "version": "0.1.0",
+  "version": "0.0.1",
+  "description": "Wink sassy webapp",
+  "engines": {
+    "node": "14.x",
+    "npm": "7.x",
+    "yarn": "1.x"
+  },
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write",
+    "type-check": "yarn tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prathusingh/wink-sassy"
+  },
+  "keywords": [
+    "wink-sassy",
+    "react"
+  ],
+  "homepage": "https://github.com/artsy/eigen#readme",
+  "author": "Prathu Singh",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
@@ -16,11 +40,29 @@
     "typescript": "^4.5.2",
     "web-vitals": "^1.1.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn prettier",
+      "yarn lint"
+    ],
+    "*.@(json|md|js)": [
+      "yarn prettier"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": false,
+    "trailingComma": "es5",
+    "bracketSpacing": true
   },
   "eslintConfig": {
     "extends": [
