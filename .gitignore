@@ -7,4 +7,3 @@ bin/*
 # web dependencies
 /client/web/node_modules
 /client/web/yarn-error.log*
-
