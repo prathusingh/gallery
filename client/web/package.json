@@ -1,7 +1,7 @@
 {
-  "name": "wink-sassy",
+  "name": "Gallery",
   "version": "0.0.1",
-  "description": "Wink sassy webapp",
+  "description": "Gallery webapp",
   "engines": {
     "node": "14.x",
     "npm": "7.x",
