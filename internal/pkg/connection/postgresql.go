@@ -14,7 +14,7 @@ func NewPostgreSQL(conf *Configuration)(*pgxpool.Pool, error) {
 	get := func(v string) string {
 		res, err := conf.Get(v)
 		if err != nil {
-			log.Fatalf("Couldn't get configuration value for %s: %s", v, err)
+			log.Fatalf("Couldn't get configuration value %s: %s", v, err)
 		}
 
 		return res
