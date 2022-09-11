@@ -18,7 +18,9 @@ func main() {
 	}
 
 	appLogger := logger.NewAppLogger(cfg.Logger)
+	appLogger.InitLogger()
+	appLogger.WithName("ApiGateway")
 
 	s := server.NewServer(appLogger, cfg)
-	s.Run()
+	appLogger.Fatal(s.Run())
 }
