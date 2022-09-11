@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
 
 	"github.com/pkg/errors"
 	"github.com/prathusingh/gallery/pkg/constants"
@@ -36,15 +37,16 @@ type Grpc struct {
 func InitConfig() (*Config, error) {
 	if configPath == "" {
 		configPathFromEnv := os.Getenv(constants.ConfigPath)
-		configPath = configPathFromEnv
-	} else {
-		getwd, err := os.Getwd()
-
-		if err != nil {
-			return nil, errors.Wrap(err, "os.Getwd")
+		if configPathFromEnv != "" {
+			configPath = configPathFromEnv
+		} else {
+			getwd, err := os.Getwd()
+			if err != nil {
+				return nil, errors.Wrap(err, "os.Getwd")
+			}
+			parent := filepath.Dir(getwd)
+			configPath = fmt.Sprintf("%s/config/config.yaml", parent)
 		}
-		configPath = fmt.Sprintf("%s/gateway/config/config.yaml", getwd)
-
 	}
 	cfg := &Config{}
 
