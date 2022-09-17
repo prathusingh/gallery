@@ -7,5 +7,5 @@
 ###### A customer can browse photographers and can interact with their work.
 
 #### Tech Stack
-<p>Web Client uses React <br>
-Backend uses go microservices.</p>
+* Web Client uses React
+* Backend uses Go microservices
