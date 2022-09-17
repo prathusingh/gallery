@@ -16,4 +16,5 @@
 - gateway - endpoint for web client to interact with backend
 - user - handles authentication, authorization, personalized url generation
 - media - handles images processing, loading, fetching from google cloud storage
-- discovery - handles discovery of new photographers as well as potential clients. supports browing by new cusotmers or photographers
+- discovery - handles search of new photographers as well as potential clients. supports browing by new cusotmers or photographers
+- notification - handles subscriptions based notifications
