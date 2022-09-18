@@ -9,7 +9,7 @@
 - Web Client uses React, GraphQl, Relay, Webpack
 - Backend uses Go microservices
 - Uses GRPC and CQRS driven Kafka based intercommunication mechanism
-- Uses Postgres SQL and GCP.
+- Uses Postgres SQL and GCP for data storage
 
 ##### Microservices
 
