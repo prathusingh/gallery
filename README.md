@@ -17,4 +17,4 @@
 - user - handles authentication, authorization, personalized url generation, subscribes to booking event. communicates with media and discovery service using grpc.
 - media - handles images processing, loading, fetching from google cloud storage.
 - discovery - handles search of new photographers as well as potential clients. supports browing by new cusotmers or photographers.
-- booking - handles photographer book. communicates asynchronously with user service using event driven mechanism
+- notification - handles notifcation regarding booking, comments and upvotes. communicates asynchronously with user service using event driven mechanism
