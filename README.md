@@ -18,3 +18,4 @@
 - media - handles images processing, loading, fetching from google cloud storage.
 - discovery - handles search of new photographers as well as potential clients. supports browing by new cusotmers or photographers.
 - notification - handles notifcation regarding booking, comments and upvotes. communicates asynchronously with user service using event driven mechanism
+- message - enables email communication
