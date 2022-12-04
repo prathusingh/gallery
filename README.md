@@ -1,7 +1,7 @@
 # Gallery
 
 - <b> Gallery creates a personalized portfolio of photographers where they can showcase their work.</b>
-- <b> A photographer can have its own portal. In a portal, the photographer can showcase photos.
+- <b> There will be a write portal for the photographer and read portal for the user.
 - <b> Customer can leave review on the photographer.
 - <b> Customer can contact photgrapher by email.
 - <b> Notification will let photographer to know that someone has reviewed or contacted them.
@@ -9,10 +9,10 @@
 
 #### Tech Stack
 
-- Web Client uses React, GraphQl, Relay, Webpack
+- Web Client uses React, GraphQl, Relay, Webpack.
 - Backend uses Go microservices
-- Uses GRPC and CQRS driven Kafka based intercommunication mechanism
-- Uses Postgres SQL and GCP for data storage
+- Uses GRPC and CQRS driven Kafka based intercommunication mechanism.
+- Uses Postgres SQL and GCP for data storage.
 
 ##### Microservices
 
