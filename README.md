@@ -4,7 +4,7 @@
 - <b> A photographer can have its own portal. In a portal, the photographer can showcase photos.
 - <b> Customer can leave review on the photographer.
 - <b> Customer can contact photgrapher by email.
-- <b> Notification will let photographer to know that someone has reviewed or contacted them. 
+- <b> Notification will let photographer to know that someone has reviewed or contacted them.
 - <b> A photographer can also search other photographer's work too. </b>
 
 #### Tech Stack
@@ -16,10 +16,14 @@
 
 ##### Microservices
 
-- gateway - endpoint for web client to interact with backend. communicates with user service using grpc.
-- user - handles authentication, authorization, personalized url generation, subscribes to booking event. communicates with media and discovery service using grpc.
-- media - handles images processing, loading, fetching from google cloud storage.
-- discovery - handles search of new photographers as well as potential clients. supports browing by new cusotmers or photographers.
-- notification - handles notifcation regarding booking, comments and upvotes. communicates asynchronously with user service using event driven mechanism.
-- message - enables email communication.
-- review - enables reviewing of photographer's work.
+- gateway - endpoint for web client to interact with other microservices. Receives http request from
+  the webclient.
+- user - handles authentication, authorization, personalized url generation and review generation.
+  stores all the information in PostgreSQL db. Commands logged in user in the event store
+- media - handles images processing, loading, fetching from google cloud storage. stores meta infor
+  mation inside media PostgreSQL db. Reads photographs based on the logged in user.
+  Commands new photographs for the photographer.
+- search - handles search of new photographs by the phtographs type. Read only view from the elastic
+  store.
+- notification - subscribe to new reviews and messages. read only view.
+- message - enables email communication. Commands new message inside PostgreSQL db.
