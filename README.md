@@ -2,7 +2,7 @@
 
 - <b> Gallery creates a personalized portfolio of photographers where they can showcase their work.</b>
 - <b> There will be a write portal for the photographer and read portal for the user.
-- <b> Customer can leave review on the photographer.
+- <b> Customer can leave reviews on the photographer.
 - <b> Customer can contact photgrapher by email.
 - <b> Notification will let photographer to know that someone has reviewed or contacted them.
 - <b> A photographer can also search other photographer's work too. </b>
