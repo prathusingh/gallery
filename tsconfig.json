@@ -1,26 +1,41 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
     "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "baseUrl": "./src",
+    "downlevelIteration": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "incremental": true,
+    "jsx": "react-jsx",
+    "module":"CommonJS",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "noUnusedLocals": true,
+    "outDir": ".cache/tsc", // Need outputdirectory for incremental type-checking
+    "pretty": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "ES2016",
+    "typeRoots": ["./src/typings", "./node_modules/@types"],
+    "types": ["node", "jest", "express", "webpack-env", "google-maps"],
+    "paths": {
+      "package.json": ["./package.json"],
+      "*": ["./*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ],
+    "strict": false,
+    "strictNullChecks": true
   },
-  "include": [
-    "src"
+  "include": ["./jest.envSetup.ts", "./src"],
+  "exclude": [
+    "src/**/__generated__/*.ts",
+    "**/node_modules",
   ]
 }
