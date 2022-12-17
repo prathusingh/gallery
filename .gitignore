@@ -5,5 +5,5 @@ bin/*
 .DS_Store
 
 # web dependencies
-/client/web/node_modules
-/client/web/yarn-error.log*
+node_modules
+yarn-error.log*
